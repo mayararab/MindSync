@@ -1,3 +1,20 @@
+"""
+stress_predictor — rule-based stress scoring.
+
+Rules implemented (evidence-informed):
+- Meeting density: consecutive meetings over a threshold (e.g., >2 hours).
+- Short breaks: gaps < 15 minutes flagged as recovery risk.
+- (Optional) Context switches: different meeting topics back-to-back.
+
+Returns:
+- A list of "stress points" with timestamp and reason.
+- (Optionally) an overall day/category (low/medium/high).
+
+Rationale:
+- Simple, explainable heuristics align with the coursework’s fallback path.
+- Easy to demo and discuss in the video + report.
+"""
+
 from datetime import timedelta
 
 def rule_set_1(events):
@@ -52,4 +69,5 @@ if __name__ == "__main__":
     daily_events = get_daily_events(events, "2025-08-13")
     stress_points = predict_stress(daily_events)
     for point in stress_points:
+
         print(f"Stress at {point['time']}: {point['reason']}")
