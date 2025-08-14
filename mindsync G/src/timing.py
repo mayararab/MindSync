@@ -1,3 +1,16 @@
+"""
+timing — finds free slots and places recommendations.
+
+Responsibilities:
+- Compute gaps between consecutive events.
+- Only use gaps >= 15 minutes (configurable).
+- Avoid overlapping suggestions with existing events.
+- (Future) Stagger multiple suggestions within long gaps.
+
+Returns:
+- A merged schedule or list of inserted recommendations with their timestamps.
+"""
+
 from datetime import timedelta
 from suggestions import get_suggestions
 
@@ -40,4 +53,5 @@ if __name__ == "__main__":
     # Schedule suggestions
     suggestions = schedule_suggestions(daily_events, stress_points)
     for s in suggestions:
+
         print(f"At {s['start']}: {s['suggestion']} ({s['duration']} mins)")
