@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "title": "Morning Check-in",
+    "start": "2025-08-13T09:00:00",
+    "end": "2025-08-13T09:30:00",
+    "type": "work"
+  },
+  {
+    "id": 2,
+    "title": "Lunch Break",
+    "start": "2025-08-13T12:00:00",
+    "end": "2025-08-13T13:00:00",
+    "type": "break"
+  }
+]

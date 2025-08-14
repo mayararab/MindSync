@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MindSync: Wellbeing Companion</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        h1 { color: #333; }
+        h2 { color: #555; }
+        ul { list-style-type: none; padding: 0; }
+        li { margin: 10px 0; padding: 10px; border: 1px solid #ddd; border-radius: 5px; }
+        .error { color: red; }
+        form { margin-bottom: 20px; }
+        select, button { padding: 5px; margin-right: 10px; }
+    </style>
+</head>
+<body>
+    <h1>MindSync: Your Personal Wellbeing Companion</h1>
+    
+    <form method="post">
+        <label for="calendar_file">Select Calendar:</label>
+        <select name="calendar_file" id="calendar_file">
+            {% for cal in available_calendars %}
+                <option value="{{ cal }}" {% if cal == calendar_file %}selected{% endif %}>{{ cal }}</option>
+            {% endfor %}
+        </select>
+        <button type="submit">Load Calendar</button>
+    </form>
+    
+    <p>Using calendar file: {{ calendar_file }}</p>
+    
+    {% if error_message %}
+        <p class="error">{{ error_message }}</p>
+    {% endif %}
+    
+    <h2>Calendar Events for 2025-08-13</h2>
+    <ul>
+        {% for event in events %}
+            <li>{{ event.title }}: {{ event.start }} to {{ event.end }}</li>
+        {% endfor %}
+        {% if not events %}
+            <li>No events found</li>
+        {% endif %}
+    </ul>
+    
+    <h2>Stress Points</h2>
+    <ul>
+        {% if stress_points %}
+            {% for point in stress_points %}
+                <li>{{ point.time }}: {{ point.reason }}</li>
+            {% endfor %}
+        {% else %}
+            <li>None detected</li>
+        {% endif %}
+    </ul>
+    
+    <h2>Recommended Suggestions</h2>
+    <ul>
+        {% if suggestions %}
+            {% for s in suggestions %}
+                <li>{{ s.start }}: {{ s.suggestion }} ({{ s.duration }} mins)</li>
+            {% endfor %}
+        {% else %}
+            <li>No suggestions scheduled</li>
+        {% endif %}
+    </ul>
+</body>
+</html>
