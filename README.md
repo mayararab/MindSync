@@ -92,14 +92,20 @@ pycache/
 .DS_Store
 
 ---
-## Example Output
-### Busy Calendar
-![Busy Run](screenshots/2.png)
-
-### Light Calendar
-![Light Run](screenshots/3.png)
 
 ## Reflection  
 Working on this project helped me understand how simple rule-based logic in Python can be used to analyze real-world data like calendar events. I also learned how to organize code into multiple files and run it step by step, which improved my confidence with Python projects.
+
+---
+## Example Output
+
+### Default Calendar
+![Default Run](screenshots/default_run.png) 
+
+### Busy Calendar
+![Busy Run](screenshots/busy_run.png)
+
+### Light Calendar
+![Light Run](screenshots/light_run.png)
 
 
