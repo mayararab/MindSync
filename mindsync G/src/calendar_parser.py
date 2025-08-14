@@ -1,3 +1,18 @@
+"""
+calendar_parser — loads and normalizes calendar data.
+
+Inputs:
+- JSON files in /data (e.g., calendar.json, busy_calendar.json, light_calendar.json)
+
+Outputs:
+- A list of event dicts or objects with:
+  { "title": str, "start": datetime, "end": datetime, "type": Optional[str] }
+
+Responsibilities:
+- Parse ISO timestamps and sort events by start time.
+- Provide simple helpers for computing gaps/durations if needed.
+"""
+
 import json
 from datetime import datetime
 
@@ -22,4 +37,5 @@ if __name__ == "__main__":
     events = parse_calendar("data/calendar.json")
     daily_events = get_daily_events(events, "2025-08-13")
     for event in daily_events:
+
         print(f"{event['title']}: {event['start']} to {event['end']}")
