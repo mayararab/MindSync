@@ -1,3 +1,21 @@
+"""
+MindSync — main entry point.
+
+Role:
+- CLI that lets the user choose a calendar JSON from /data.
+- Orchestrates the pipeline:
+  1) load & parse calendar (calendar_parser)
+  2) detect stress points (stress_predictor)
+  3) find free slots and place activities (timing)
+  4) print a readable schedule/recommendations (suggestions + output)
+
+Notes:
+- Designed for the JSON fallback mode per coursework brief.
+- Printed gap minutes (e.g., 60.0) represent the free-slot length, not activity length.
+- Future work: stagger overlapping recommendations if multiple rules trigger at once.
+Author: Mayar
+"""
+
 from calendar_parser import parse_calendar, get_daily_events
 from stress_predictor import predict_stress
 from timing import schedule_suggestions
@@ -65,4 +83,5 @@ def main():
  # Pause to keep console open
     input("\nPress Enter to exit...")
 if __name__ == "__main__":
+
     main()
