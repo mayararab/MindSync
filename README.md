@@ -70,11 +70,7 @@ When prompted, choose:
 ---
 
 ## Demo Video
-Link: **<add your unlisted YouTube link here>**
-
-## Report
-Link: **<add your uploaded PDF/Doc link here>**  
-(Or mention it’s submitted via your VLE.)
+Link: (https://www.youtube.com/watch?v=bIwRxXgS8Nc)
 
 ---
 
