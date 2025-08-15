@@ -70,7 +70,7 @@ When prompted, choose:
 ---
 
 ## Demo Video
-Link: (https://www.youtube.com/watch?v=bIwRxXgS8Nc)
+Link: (https://youtu.be/i50mBkZWBXg)
 
 ---
 
